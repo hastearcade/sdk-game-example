@@ -1,6 +1,6 @@
 {
   "name": "game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "haste-arcade-sdk": "^1.0.4"
+    "haste-arcade-sdk": "^1.0.8"
   }
 }
