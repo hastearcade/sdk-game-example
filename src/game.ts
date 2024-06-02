@@ -51,16 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
       leaderboardContainer.innerHTML = ""; // Clear the existing leaderboard
       message.leaderboard.forEach((entry, index) => {
         const listItem = document.createElement("li");
-
-        // Encode the SVG string
-        const encodedSvg = encodeURIComponent(entry.avatarUrl!);
-
-        // Create a data URI
-        const dataUri = `data:image/svg+xml;charset=utf-8,${encodedSvg}`;
-
         // Create an img element for the avatar
         const avatarImg = document.createElement("img");
-        avatarImg.src = dataUri;
+        avatarImg.src = entry.avatarUrl!;
         avatarImg.alt = `${entry.userId}'s avatar`;
         avatarImg.width = 30; // Set the width of the avatar image
         avatarImg.height = 30; // Set the height of the avatar image
@@ -69,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Create a span element for the entry text
         const entryText = document.createElement("span");
-        entryText.textContent = `${index + 1}. ${entry.userId}: ${entry.score}`;
+        entryText.textContent = `${index + 1}. ${entry.displayName}: ${
+          entry.score
+        }`;
 
         // Append the avatar and text to the list item
         listItem.appendChild(avatarImg);
